@@ -2,9 +2,9 @@ FROM ruby:3.1.2-bullseye
 
 RUN apt-get update -qq && apt-get install -y build-essential postgresql-client libpq-dev
 
-WORKDIR /api
-COPY Gemfile /api/Gemfile
-COPY Gemfile.lock /api/Gemfile.lock
+WORKDIR /home/api
+COPY Gemfile /home/api/Gemfile
+COPY Gemfile.lock /home/api/Gemfile.lock
 RUN bundle install
 
 COPY entrypoint.sh /usr/bin/
