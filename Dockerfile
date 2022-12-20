@@ -7,6 +7,8 @@ COPY Gemfile /home/api/Gemfile
 COPY Gemfile.lock /home/api/Gemfile.lock
 RUN bundle install
 
+RUN chown -R $USER:$USER .
+
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
