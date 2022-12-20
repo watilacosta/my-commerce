@@ -13,8 +13,8 @@
           null,
           null,
           1,
-          2,
-          2,
+          17,
+          17,
           null,
           null,
           null,
@@ -42,9 +42,10 @@
           null
         ]
       },
-      "/home/api/app/models/product.rb": {
+      "/home/api/app/models/brand.rb": {
         "lines": [
-          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -61,12 +62,19 @@
           null
         ]
       },
-      "/home/api/app/models/brand.rb": {
+      "/home/api/spec/models/category_spec.rb": {
         "lines": [
-          1,
           1,
           null,
           1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
           null
         ]
       },
@@ -79,8 +87,71 @@
           1,
           null
         ]
+      },
+      "/home/api/spec/models/product_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/home/api/app/models/product.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/api/spec/requests/brands_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/api/spec/requests/products_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1671501536
+    "timestamp": 1671567918
   }
 }

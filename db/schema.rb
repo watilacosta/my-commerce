@@ -27,11 +27,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_170402) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "description"
-    t.decimal "price"
-    t.integer "quantity"
-    t.boolean "in_stock"
+    t.decimal "price", null: false
+    t.integer "quantity", default: 0, null: false
+    t.boolean "in_stock", default: false, null: false
     t.bigint "brand_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
