@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  post 'auth/login'
+
   resources :products
   resources :brands
   resources :categories
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :administration do
+    resources :users
+  end
 end

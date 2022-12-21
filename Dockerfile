@@ -1,6 +1,9 @@
 FROM ruby:3.1.2-bullseye
 
-RUN apt-get update -qq && apt-get install -y build-essential postgresql-client libpq-dev
+RUN apt-get update -qq && apt-get install -y build-essential \
+    postgresql-client \
+    libpq-dev \
+    nano
 
 WORKDIR /home/api
 COPY Gemfile /home/api/Gemfile
