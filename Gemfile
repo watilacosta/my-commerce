@@ -50,4 +50,5 @@ group :development do
   gem 'rspec-json_expectations'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false
+  gem 'webmock'
 end

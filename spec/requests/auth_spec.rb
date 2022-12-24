@@ -4,7 +4,7 @@ RSpec.describe "Auths", type: :request do
   describe "POST /login" do
 
     context 'when logging is success' do
-      let(:user) { create(:user, profile: :admin, status: :active) }
+      let(:user) { create(:active_admin) }
 
       before(:each) do
         post "/auth/login", params: {

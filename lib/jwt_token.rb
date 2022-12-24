@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class JwtToken
-  attr_accessor :rsa_private
-  attr_accessor :rsa_public
+  attr_accessor :rsa_private, :rsa_public
 
   SECRET_KEY = Rails.application.credentials.to_s
 

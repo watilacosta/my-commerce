@@ -5,7 +5,8 @@ class AuthController < ApplicationController
 
   # POST auth/login
   def login
-    user = User.find_by_email!(login_params[:email])
+    user = User.find_by!(email: login_params[:email])
+
     if user&.authenticate(login_params[:password])
       token = JwtToken.encode(user_id: user.id)
 
