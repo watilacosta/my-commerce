@@ -1,8 +1,6 @@
 # frozen_string_literal: true
-require 'bcrypt'
 
 class User < ApplicationRecord
-  include BCrypt
   has_secure_password
 
   validates :email, presence: true, length: { in: 6..100 }, uniqueness: true

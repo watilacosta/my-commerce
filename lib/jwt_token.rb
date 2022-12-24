@@ -9,10 +9,14 @@ class JwtToken
   def self.encode(payload, expires = 24.hours.from_now)
     payload[:expires] = expires.to_i
 
-    JWT.encode(payload, SECRET_KEY)
+    token = JWT.encode(payload, SECRET_KEY)
+
+    raise JWT::EncodeError unless token
+
+    token
   end
 
   def self.decode(token)
-    decoded_token = JWT.decode(token, SECRET_KEY)[0]
+    JWT.decode(token, SECRET_KEY)[0]
   end
 end

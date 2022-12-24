@@ -13,8 +13,8 @@
           null,
           null,
           1,
-          27,
-          27,
+          4,
+          4,
           null,
           null,
           null,
@@ -38,117 +38,6 @@
           1,
           1,
           1,
-          null,
-          null
-        ]
-      },
-      "/home/api/app/models/brand.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/api/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/api/spec/models/category_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/home/api/app/models/category.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/api/spec/models/product_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/home/api/app/models/product.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/api/spec/models/user_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          null,
-          10,
-          null,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
           null,
           null
         ]
@@ -177,44 +66,87 @@
           null
         ]
       },
-      "/home/api/spec/requests/brands_spec.rb": {
+      "/home/api/app/models/application_record.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           1,
+          null
+        ]
+      },
+      "/home/api/app/controllers/auth_controller.rb": {
+        "lines": [
+          null,
+          null,
           1,
+          1,
+          null,
+          null,
+          1,
+          4,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          6,
           null,
           null
         ]
       },
-      "/home/api/spec/requests/login_spec.rb": {
+      "/home/api/app/controllers/application_controller.rb": {
         "lines": [
-          1,
           null,
-          1,
-          1,
+          null,
           1,
           1,
           0,
           null,
+          0,
+          0,
           null,
+          0,
+          null,
+          0,
           null,
           null
         ]
       },
-      "/home/api/spec/requests/products_spec.rb": {
+      "/home/api/lib/jwt_token.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           1,
           1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          2,
+          null,
+          2,
+          null,
+          null,
+          1,
+          0,
           null,
           null
         ]
       }
     },
-    "timestamp": 1671585970
+    "timestamp": 1671844236
   }
 }

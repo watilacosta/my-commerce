@@ -6,14 +6,12 @@ class AuthController < ApplicationController
   # POST auth/login
   def login
     user = User.find_by_email!(login_params[:email])
+    if user&.authenticate(login_params[:password])
+      token = JwtToken.encode(user_id: user.id)
 
-    raise JWT::EncodeError, 'Unauthorized with this password.' unless user&.authenticate(login_params[:password])
-    token = JwtToken.encode(user_id: user.id)
-
-    render json: { token: token }, status: :ok
+      render json: { token: token }, status: :ok
+    end
   rescue ActiveRecord::RecordNotFound, JWT::EncodeError => e
-    Rails.logger.error e.message
-
     render json: { error: e.message }, status: :unauthorized
   end
 

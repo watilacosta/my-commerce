@@ -1,4 +1,4 @@
-module Administration
+module Admin
   class UsersController < ApplicationController
     before_action :authorize_resource
 
