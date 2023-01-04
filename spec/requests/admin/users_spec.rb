@@ -12,6 +12,23 @@ RSpec.describe 'Admin::Users', type: :request do
     context 'when user is admin' do
       it 'returns http status ok' do
         expect(response).to have_http_status(:ok)
+        expect(JSON.parse(response.body)).to include_json(
+         {
+           "data": [
+             {
+               "id": user.id.to_s,
+               "type": "user",
+               "attributes": {
+                 "firstname": user.firstname,
+                 "lastname": user.lastname,
+                 "email": user.email,
+                 "profile": user.profile,
+                 "status": user.status
+               }
+             }
+           ]
+         }
+        )
       end
     end
   end

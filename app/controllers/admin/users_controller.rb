@@ -6,8 +6,9 @@ module Admin
 
     def index
       users = User.all
+      users_serialized = UserSerializer.new(users).serializable_hash
 
-      render json: users, status: :ok
+      render json: users_serialized, status: :ok
     end
   end
 end

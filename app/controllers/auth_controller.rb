@@ -10,7 +10,7 @@ class AuthController < ApplicationController
     if user&.authenticate(login_params[:password])
       token = JwtToken.encode(user_id: user.id)
 
-      render json: { token: token }, status: :ok
+      render json: { token: }, status: :ok
     end
   rescue ActiveRecord::RecordNotFound, JWT::EncodeError => e
     render json: { error: e.message }, status: :unauthorized

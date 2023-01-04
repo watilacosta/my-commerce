@@ -5,7 +5,7 @@ class JwtToken
 
   SECRET_KEY = Rails.application.credentials.to_s
 
-  def self.encode(payload, expires = 24.hours.from_now)
+  def self.encode(payload, expires = 5.seconds.from_now)
     payload[:expires] = expires.to_i
 
     token = JWT.encode(payload, SECRET_KEY)
@@ -16,6 +16,9 @@ class JwtToken
   end
 
   def self.decode(token)
-    JWT.decode(token, SECRET_KEY)[0]
+    decoded_token = JWT.decode(token, SECRET_KEY)[0]
+    raise JWT::StandardError unless decoded_token
+
+    decoded_token
   end
 end
