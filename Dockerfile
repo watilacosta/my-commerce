@@ -1,4 +1,4 @@
-FROM ruby:3.1.3-bullseye
+FROM ruby:3.2.0-bullseye
 
 RUN apt-get update -qq && apt-get install -y build-essential \
     postgresql-client \
