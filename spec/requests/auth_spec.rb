@@ -8,8 +8,10 @@ RSpec.describe "Auths", type: :request do
 
       before(:each) do
         post "/auth/login", params: {
-          email: user[:email],
-          password: '12345678'
+          auth: {
+            email: user[:email],
+            password: '12345678'
+          }
         }
       end
 
@@ -25,8 +27,10 @@ RSpec.describe "Auths", type: :request do
     context 'when logging is fail' do
       before(:each) do
         post "/auth/login", params: {
-          email: 'fake-email@fakehost.com',
-          password: '12345678'
+          auth: {
+            email: 'fake-email@fakehost.com',
+            password: '12345678'
+          }
         }
       end
 

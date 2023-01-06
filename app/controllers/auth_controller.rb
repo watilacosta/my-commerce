@@ -5,9 +5,9 @@ class AuthController < ApplicationController
 
   # POST auth/login
   def login
-    user = User.find_by!(email: login_params[:email])
+    user = User.find_by!(email: permitted_params[:email])
 
-    if user&.authenticate(login_params[:password])
+    if user&.authenticate(permitted_params[:password])
       token = JwtToken.encode(user_id: user.id)
 
       render json: { token: }, status: :ok
@@ -18,7 +18,7 @@ class AuthController < ApplicationController
 
   private
 
-  def login_params
-    params.permit(:email, :password)
+  def permitted_params
+    @permitted_params ||= params.require(:auth).permit(:email, :password)
   end
 end
