@@ -5,11 +5,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.0'
 
-gem 'cancancan'
 gem 'jsonapi-serializer'
 gem 'jwt'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'pundit'
 gem 'rails', '~> 7.0.4'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
