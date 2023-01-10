@@ -47,6 +47,7 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'bullet'
   gem 'database_cleaner-active_record'
   gem 'rspec-json_expectations'
   gem 'shoulda-matchers', '~> 5.0'

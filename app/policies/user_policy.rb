@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class UserPolicy < ApplicationPolicy
   def index?
-    user.admin?
+    user.admin? && user.active?
   end
 
   class Scope < Scope

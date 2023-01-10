@@ -2,6 +2,7 @@
 
 class AuthController < ApplicationController
   before_action :authorize_resource, except: :login
+  after_action :verify_authorized, except: :login
 
   # POST auth/login
   def login
