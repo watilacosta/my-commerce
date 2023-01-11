@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :category do
-    description { Faker::Commerce.department(max: 1) }
+    description { Faker::Commerce.unique.department(max: 2) }
   end
 end

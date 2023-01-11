@@ -3,6 +3,8 @@
 class ApplicationController < ActionController::API
   include Pundit::Authorization
 
+  after_action :verify_authorized
+
   attr_reader :current_user
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized

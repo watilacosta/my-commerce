@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
     resources :brands
-    resources :categories, only: :create
+    resources :categories, only: [:index, :create, :update]
     resources :users
   end
 end

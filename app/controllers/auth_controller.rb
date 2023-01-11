@@ -2,10 +2,10 @@
 
 class AuthController < ApplicationController
   before_action :authorize_resource, except: :login
-  after_action :verify_authorized, except: :login
 
   # POST auth/login
   def login
+    skip_authorization
     user = User.find_by!(email: permitted_params[:email])
 
     if user&.authenticate(permitted_params[:password])
