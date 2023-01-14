@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :lastname, length: { maximum: 50 }
 
   enum profile: {
-    other: 0,
+    customer: 0,
     admin: 1
   }
 

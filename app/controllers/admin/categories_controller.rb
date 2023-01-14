@@ -2,8 +2,6 @@
 
 module Admin
   class CategoriesController < AdminController
-    include SerializeResponse
-
     before_action :authorize_resource
 
     def index

@@ -15,4 +15,7 @@ if Rails.env.development?
       description:
     )
   end
+
+  admin = FactoryBot.create(:active_admin)
+  puts "ADMINISTRATOR: #{admin.email}"
 end

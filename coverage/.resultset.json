@@ -13,8 +13,8 @@
           null,
           null,
           1,
-          47,
-          47,
+          49,
+          49,
           null,
           null,
           null,
@@ -55,6 +55,41 @@
           1,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/home/api/app/mailers/user_mailer.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/api/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/api/spec/models/brand_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
           null,
           null
         ]
@@ -201,8 +236,20 @@
           1,
           null,
           1,
-          2,
-          2,
+          4,
+          4,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           1,
@@ -214,9 +261,11 @@
       },
       "/home/api/app/policies/category_policy.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
-          2,
+          3,
           null,
           null,
           1,
@@ -224,11 +273,11 @@
           null,
           null,
           1,
-          4,
+          5,
           null,
           null,
           1,
-          11,
+          13,
           null,
           null,
           1,
@@ -248,8 +297,8 @@
           1,
           null,
           1,
-          15,
-          15,
+          17,
+          17,
           null,
           null,
           1,
@@ -589,9 +638,11 @@
           1,
           1,
           null,
+          1,
+          1,
+          null,
           null,
           1,
-          15,
           15,
           null,
           13,
@@ -603,7 +654,28 @@
           2,
           null,
           null,
+          null,
           1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          15,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
           null,
           1,
           28,
@@ -637,6 +709,21 @@
           null,
           1,
           0,
+          null,
+          null
+        ]
+      },
+      "/home/api/app/controllers/concerns/serialize_response.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          7,
           null,
           null
         ]
@@ -675,8 +762,6 @@
           null,
           1,
           1,
-          1,
-          null,
           1,
           null,
           1,
@@ -722,20 +807,7 @@
           1,
           1,
           null,
-          null
-        ]
-      },
-      "/home/api/app/controllers/concerns/serialize_response.rb": {
-        "lines": [
-          null,
-          null,
           1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          6,
           null,
           null
         ]
@@ -762,7 +834,6 @@
           1,
           1,
           1,
-          1,
           null,
           1,
           null,
@@ -782,6 +853,6 @@
         ]
       }
     },
-    "timestamp": 1673478220
+    "timestamp": 1673708025
   }
 }

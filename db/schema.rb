@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_004338) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["description"], name: "index_categories_on_description", unique: true
   end
 
   create_table "products", force: :cascade do |t|
@@ -45,8 +46,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_004338) do
     t.string "lastname"
     t.string "email", null: false
     t.string "password_digest", null: false
-    t.integer "profile", null: false
+    t.integer "profile", default: 0, null: false
     t.integer "status", default: 0, null: false
+    t.datetime "confirmed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

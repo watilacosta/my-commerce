@@ -5,7 +5,7 @@ describe UserPolicy do
 
   permissions :index? do
     it 'denies access unless user is admin' do
-      expect(subject).not_to permit(User.new(profile: :other))
+      expect(subject).not_to permit(User.new(profile: :customer))
     end
 
     it 'denies access if user is not active' do
