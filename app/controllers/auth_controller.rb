@@ -30,9 +30,10 @@ class AuthController < ApplicationController
   end
 
   def confirm_user_access
-    ReleaseAccountAccess.call(permitted_params)
+    response = ReleaseAccountAccess.call(permitted_params)
+    message = response.failure? ? response.error : 'Acesso liberado!'
 
-    render json: { message: 'Acesso do usuário liberado.' }
+    render json: { message: message }
   rescue ActiveRecord::RecordNotFound => e
     render json: { message: "Usuário não encontrado!" }
   end
