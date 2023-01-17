@@ -30,3 +30,6 @@
 
 # Ignore ide's
 /.idea
+
+# Coverage tests
+/coverage/*
