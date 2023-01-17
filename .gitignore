@@ -33,3 +33,4 @@
 
 # Coverage tests
 /coverage/*
+!/coverage/.keep
