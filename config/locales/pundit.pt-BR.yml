@@ -1,0 +1,9 @@
+pt-BR:
+  pundit:
+    default: 'Você não pode executar esta ação.'
+    category_policy:
+      index?: 'Você não está autorizado a listar as categorias de produtos!'
+      update?: 'Você não pode editar uma categoria de produto!'
+      create?: 'Você não pode cadastrar uma categoria de produto!'
+    user_policy:
+      index?: 'Você não está autorizado a lista usuários!'

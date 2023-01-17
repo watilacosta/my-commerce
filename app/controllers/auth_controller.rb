@@ -3,8 +3,8 @@
 class AuthController < ApplicationController
   include SerializeResponse
 
-  before_action :authorize_resource, except: [:login, :sign_up, :confirm_user_access]
-  after_action :skip_authorization_method, only: [:login, :sign_up, :confirm_user_access]
+  before_action :authorize_resource, except: %i[login sign_up confirm_user_access]
+  after_action :skip_authorization_method, only: %i[login sign_up confirm_user_access]
 
   # POST /auth/login
   def login
@@ -25,17 +25,17 @@ class AuthController < ApplicationController
     user_serialized = serialize(result.user, UserSerializer)
 
     render json: { user: user_serialized }, status: :created
-  rescue ActiveRecord::RecordInvalid => e
+  rescue ActiveRecord::RecordInvalid, Interactor::Failure => e
     render json: { error: e.message }
   end
 
   def confirm_user_access
-    response = ReleaseAccountAccess.call(permitted_params)
+    response = ReleaseUserAccountAccess.call(permitted_params)
     message = response.failure? ? response.error : 'Acesso liberado!'
 
     render json: { message: message }
   rescue ActiveRecord::RecordNotFound => e
-    render json: { message: "Usuário não encontrado!" }
+    render json: { message: e.message }
   end
 
   private
@@ -53,7 +53,7 @@ class AuthController < ApplicationController
 
   def permitted_params
     @permitted_params ||= params.require(:auth).permit(
-      :email, :password,:user_email, :confirmation_code
+      :email, :password, :user_email, :confirmation_code
     )
   end
 end

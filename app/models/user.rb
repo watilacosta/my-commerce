@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_one :confirmation_code_user, dependent: :destroy
+
   has_secure_password
 
   validates :email, presence: true, length: { in: 6..100 }, uniqueness: true

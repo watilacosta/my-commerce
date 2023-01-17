@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
+  include ActionView::Helpers::TranslationHelper
   include Pundit::Authorization
 
   after_action :verify_authorized
@@ -20,7 +21,9 @@ class ApplicationController < ActionController::API
 
   private
 
-  def user_not_authorized
-    render json: { error: 'You are not authorized to perform this action.' }
+  def user_not_authorized(exception)
+    policy_name = exception.policy.class.to_s.underscore
+    render json: { error: t("pundit.#{policy_name}.#{exception.query}") },
+           scope: 'pundit', default: :default
   end
 end

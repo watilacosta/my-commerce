@@ -1,0 +1,5 @@
+pt-BR:
+  mailer:
+    user:
+      confirmation_code: 'Código de confirmação'
+      confirmation_access: 'Acesso liberado'

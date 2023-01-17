@@ -1,8 +1,19 @@
+# frozen_string_literal: true
+
 class UserMailer < ApplicationMailer
-  def confirmation_email_code
-    @user = params[:user]
+  def release_access_code
     @confirmation_code = params[:confirmation_code]
 
-    mail(to: @user.email, subject: 'Confirmation code')
+    mail(to: receiver.email, subject: t('mailer.user.confirmation_code'))
+  end
+
+  def confirmation_access
+    mail(to: receiver.email, subject: t('mailer.user.confirmation_access'))
+  end
+
+  private
+
+  def receiver
+    @receiver = params[:user]
   end
 end
