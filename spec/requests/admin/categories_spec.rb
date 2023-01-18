@@ -86,8 +86,8 @@ RSpec.describe 'Admin::Categories', type: :request do
     end
 
     context 'when category not updated' do
-      let!(:category) { create(:category) }
-      let(:empty_description) { '' }
+      let(:category) { create(:category) }
+      let(:empty_description) { nil }
 
       before do
         put "/admin/categories/#{category.id}",

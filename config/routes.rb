@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post 'auth/confirm_user_access'
 
   namespace :admin do
-    resources :products
-    resources :brands
-    resources :categories, only: %i[index create update]
+    resources :products, except: %i[new edit]
+    resources :brands, except: %i[new edit]
+    resources :categories, except: %i[new edit]
     resources :users, only: :index
   end
 end

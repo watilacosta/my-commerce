@@ -1,15 +1,7 @@
 # frozen_string_literal: true
 
-class CategoryPolicy < ApplicationPolicy
+class BrandPolicy < ApplicationPolicy
   def index?
-    active_admin?
-  end
-
-  def create?
-    active_admin?
-  end
-
-  def update?
     active_admin?
   end
 

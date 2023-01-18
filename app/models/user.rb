@@ -16,7 +16,7 @@ class User < ApplicationRecord
   }
 
   enum status: {
-    active: 0,
-    inactive: 1
+    inactive: 0,
+    active: 1
   }
 end

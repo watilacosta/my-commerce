@@ -2,10 +2,8 @@
 
 module Admin
   class CategoriesController < AdminController
-    before_action :authorize_resource
-
     def index
-      categories = authorize Category.all
+      categories = authorize Category.order(description: :asc)
 
       render json: serialize(categories, CategorySerializer), status: :ok
     end

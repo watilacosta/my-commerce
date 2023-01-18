@@ -2,10 +2,10 @@ FactoryBot.define do
   factory :user do
     firstname { Faker::Name.first_name }
     lastname { Faker::Name.last_name }
-    email { Faker::Internet.email }
+    email { Faker::Internet.unique.email }
     password_digest { BCrypt::Password.create('12345678') }
     profile { :customer }
-    status { :active }
+    status { :inactive }
 
     trait :active do
       status { :active }

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'Validations' do
     let(:profiles) { [:customer, :admin] }
-    let(:statuses) { [:active, :inactive] }
+    let(:statuses) { [:inactive, :active] }
 
     subject { create(:user) }
 

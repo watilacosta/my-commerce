@@ -24,7 +24,7 @@ class UpdateUserConfirmedAt
   def release_user_access
     context.fail!(error: 'Código incorreto!') unless confirmation_code_correct?
 
-    context.user.update(confirmed_at: DateTime.now)
+    context.user.update(confirmed_at: DateTime.now, status: :active)
   end
 
   def confirmation_code_correct?
