@@ -3,7 +3,7 @@
 module Admin
   class ProductsController < AdminController
     def index
-      products = authorize Product.includes([:brand, :category])
+      products = authorize Product.includes(%i[brand category])
                                   .order(description: :asc)
 
       render json: serialize(products, ProductSerializer), status: :ok

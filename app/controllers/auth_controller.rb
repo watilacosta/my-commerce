@@ -21,7 +21,7 @@ class AuthController < ApplicationController
 
   # POST /auth/sign_up
   def sign_up
-    result = SignUp.call(permitted_params)
+    result = Organizer::SignUp.call(permitted_params)
     user_serialized = serialize(result.user, UserSerializer)
 
     render json: { user: user_serialized }, status: :created
@@ -30,7 +30,7 @@ class AuthController < ApplicationController
   end
 
   def confirm_user_access
-    response = ReleaseUserAccountAccess.call(permitted_params)
+    response = Organizer::ReleaseUserAccountAccess.call(permitted_params)
     message = response.failure? ? response.error : 'Acesso liberado!'
 
     render json: { message: message }
