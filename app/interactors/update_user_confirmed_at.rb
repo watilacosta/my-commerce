@@ -18,10 +18,12 @@ class UpdateUserConfirmedAt
   def context_fail_to_user_confirmed
     return unless context.user.confirmed_at?
 
+    # TODO: adicionar msg ao i18n
     context.fail!(error: 'Usuário já confirmado anteriormente')
   end
 
   def release_user_access
+    # TODO: adicionar msg ao i18n
     context.fail!(error: 'Código incorreto!') unless confirmation_code_correct?
 
     context.user.update(confirmed_at: DateTime.now, status: :active)
