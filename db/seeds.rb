@@ -17,8 +17,9 @@ if Rails.env.development?
 
   puts 'CREATING CUSTOMERS'
   100.times do |i|
-    FactoryBot.create(:user)
-    puts "#{i} - #{User.last.email}"
+    user = FactoryBot.create(:user)
+    context = GenerateConfirmationCode.call(user:)
+    puts "#{i} - email: #{User.last.email}, code: #{context.confirmation_code}"
   end
 
   puts 'CREATING PRODUCTS'
