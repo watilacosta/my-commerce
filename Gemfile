@@ -29,7 +29,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-rails'
-  gem "rails_best_practices"
+  gem 'rails_best_practices'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
@@ -41,6 +41,7 @@ group :development do
   gem 'brakeman'
   gem 'bullet'
   gem 'database_cleaner-active_record'
+  gem 'rails-erd'
   gem 'rspec-json_expectations'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false
