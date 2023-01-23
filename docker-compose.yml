@@ -1,5 +1,6 @@
 services:
   mailcatcher:
+    container_name: mailcatcher
     restart: on-failure
     image: dockage/mailcatcher:0.8.2
     ports:
