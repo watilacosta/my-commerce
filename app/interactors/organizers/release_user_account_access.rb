@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Organizer
+module Organizers
   class ReleaseUserAccountAccess
     include Interactor::Organizer
 
