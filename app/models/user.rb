@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_one :confirmation_code_user, dependent: :destroy
+  has_many :orders, dependent: :restrict_with_exception
 
   has_secure_password
 
