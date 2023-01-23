@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products, only: %i[index]
     resources :brands, only: %i[index]
-    resources :categories, only: [:create, :update, :index]
+    resources :categories, only: %i[create update index]
     resources :users, only: :index
+  end
+
+  namespace :store_front do
+    resources :orders, only: [:create]
   end
 end
