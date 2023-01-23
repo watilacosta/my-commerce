@@ -31,6 +31,7 @@ class AuthController < ApplicationController
 
   def confirm_user_access
     response = Organizer::ReleaseUserAccountAccess.call(permitted_params)
+    # TODO: Adicionar a mensagem ao i18n
     message = response.failure? ? response.error : 'Acesso liberado!'
 
     render json: { message: message }
@@ -47,6 +48,7 @@ class AuthController < ApplicationController
   def error_message(error)
     return error.message unless error.instance_of?(ActiveRecord::RecordNotFound)
 
+    # TODO: adicionar a mensagem ao i18n
     Rails.logger.error(error.message)
     'Não autorizado. Verifique se seu email e senha estão corretos'
   end
