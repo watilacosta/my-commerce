@@ -2,7 +2,8 @@ FROM ruby:3.2.0-bullseye
 
 RUN apt-get update -qq && apt-get install -y build-essential \
     postgresql-client \
-    libpq-dev
+    libpq-dev \
+    graphviz
 
 WORKDIR /home/api
 COPY Gemfile /home/api/Gemfile
