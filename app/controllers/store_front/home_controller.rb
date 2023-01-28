@@ -5,7 +5,7 @@ module StoreFront
     include SerializeResponse
 
     def index
-      products = Product.all
+      products = Product.includes([:brand, :category]).all
       render json: { users: serialize(products, ProductSerializer) }, status: :ok
     end
   end
