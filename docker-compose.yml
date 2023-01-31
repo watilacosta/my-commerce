@@ -23,3 +23,8 @@ services:
       - mailcatcher
     depends_on:
       - db
+
+networks:
+  my-commerce:
+    name: my-commerce
+    external: true
