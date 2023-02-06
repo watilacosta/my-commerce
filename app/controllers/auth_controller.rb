@@ -26,7 +26,7 @@ class AuthController < ApplicationController
 
     render json: { user: user_serialized }, status: :created
   rescue ActiveRecord::RecordInvalid, Interactor::Failure => e
-    render json: { error: e.message }
+    render json: { error: e.message }, status: :unprocessable_entity
   end
 
   def confirm_user_access
@@ -34,9 +34,9 @@ class AuthController < ApplicationController
     # TODO: Adicionar a mensagem ao i18n
     message = response.failure? ? response.error : 'Acesso liberado!'
 
-    render json: { message: message }
+    render json: { message: message }, status: :ok
   rescue ActiveRecord::RecordNotFound => e
-    render json: { message: e.message }
+    render json: { message: e.message }, status: :unprocessable_entity
   end
 
   private
