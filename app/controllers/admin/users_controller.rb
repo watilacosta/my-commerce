@@ -3,10 +3,9 @@
 module Admin
   class UsersController < AdminController
     def index
-      users = User.all
-      authorize users
+      users = authorize User.order(id: :asc)
 
-      render json: serialize(users, UserSerializer), status: :ok
+      render json: users, status: 200
     end
   end
 end
