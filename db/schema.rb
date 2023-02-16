@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_174734) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.integer "profile", default: 0, null: false
-    t.integer "status", default: 0, null: false
+    t.boolean "active", default: false, null: false
     t.datetime "confirmed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

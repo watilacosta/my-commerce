@@ -15,9 +15,4 @@ class User < ApplicationRecord
     customer: 0,
     admin: 1
   }
-
-  enum status: {
-    inactive: 0,
-    active: 1
-  }
 end

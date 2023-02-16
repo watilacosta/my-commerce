@@ -26,7 +26,7 @@ class UpdateUserConfirmedAt
     # TODO: adicionar msg ao i18n
     context.fail!(error: 'Código incorreto!') unless confirmation_code_correct?
 
-    context.user.update(confirmed_at: DateTime.now, status: :active)
+    context.user.update(confirmed_at: DateTime.now, active: true)
   end
 
   def confirmation_code_correct?

@@ -5,14 +5,13 @@ FactoryBot.define do
     email { Faker::Internet.unique.email }
     password_digest { BCrypt::Password.create('12345678') }
     profile { :customer }
-    status { :inactive }
 
     trait :active do
-      status { :active }
+      active { true }
     end
 
     trait :inactive do
-      status { :inactive }
+      active { false }
     end
 
     trait :admin do

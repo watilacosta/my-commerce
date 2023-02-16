@@ -7,8 +7,9 @@ if Rails.env.development?
   end
 
   puts 'CREATING ADMIN USER'
-  admin = FactoryBot.create(:active_admin)
-  puts "ADMINISTRATOR: #{admin.email}"
+  user = FactoryBot.create(:active_admin)
+  context = GenerateConfirmationCode.call(user:)
+  puts "email: #{user.email}, code: #{context.confirmation_code}"
 
   puts 'CREATING BRANDS'
   10.times do
@@ -19,7 +20,7 @@ if Rails.env.development?
   100.times do |i|
     user = FactoryBot.create(:user)
     context = GenerateConfirmationCode.call(user:)
-    puts "#{i} - email: #{User.last.email}, code: #{context.confirmation_code}"
+    puts "#{i + 1} - email: #{User.last.email}, code: #{context.confirmation_code}"
   end
 
   puts 'CREATING PRODUCTS'
