@@ -5,7 +5,13 @@ module Admin
     def index
       users = authorize User.order(id: :asc)
 
-      render json: users, status: 200
+      render json: users, status: :ok
+    end
+
+    def edit
+      user = authorize User.find(params[:id])
+
+      render json: user, status: :ok
     end
   end
 end
