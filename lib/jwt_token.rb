@@ -5,7 +5,7 @@ class JwtToken
 
   SECRET_KEY = Rails.application.credentials.to_s
 
-  def self.encode(payload, expires = 5.seconds.from_now)
+  def self.encode(payload, expires = 1.hour.from_now)
     payload[:expires] = expires.to_i
 
     token = JWT.encode(payload, SECRET_KEY)

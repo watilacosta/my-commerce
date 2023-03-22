@@ -23,6 +23,7 @@ class ApplicationController < ActionController::API
 
   def user_not_authorized(exception)
     policy_name = exception.policy.class.to_s.underscore
+
     render json: { error: t("pundit.#{policy_name}.#{exception.query}") },
            scope: 'pundit', default: :default
   end
