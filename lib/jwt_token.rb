@@ -16,9 +16,6 @@ class JwtToken
   end
 
   def self.decode(token)
-    decoded_token = JWT.decode(token, SECRET_KEY)[0]
-    raise JWT::StandardError unless decoded_token
-
-    decoded_token
+    JWT.decode(token, SECRET_KEY)[0]
   end
 end

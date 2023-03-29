@@ -9,11 +9,11 @@ describe UserPolicy do
     end
 
     it 'denies access if user is not active' do
-      expect(subject).not_to permit(User.new(status: :inactive))
+      expect(subject).not_to permit(User.new(active: false))
     end
 
     it 'grants access if user is admin and active' do
-      expect(subject).to permit(User.new(profile: :admin, status: :active))
+      expect(subject).to permit(User.new(profile: :admin, active: true))
     end
   end
 end

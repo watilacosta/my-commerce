@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
 
     @decoded = JwtToken.decode(header).symbolize_keys!
     @current_user = User.find(@decoded[:user_id])
-  rescue ActiveRecord::RecordNotFound, JWT::VerificationError => e
+  rescue ActiveRecord::RecordNotFound, JWT::ExpiredSignature => e
     render json: { errors: e.message }, status: :unauthorized
   end
 
@@ -25,6 +25,6 @@ class ApplicationController < ActionController::API
     policy_name = exception.policy.class.to_s.underscore
 
     render json: { error: t("pundit.#{policy_name}.#{exception.query}") },
-           scope: 'pundit', default: :default
+           scope: 'pundit', default: :default, status: :unauthorized
   end
 end

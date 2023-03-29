@@ -6,4 +6,4 @@ pt-BR:
       update?: 'Você não pode editar uma categoria de produto!'
       create?: 'Você não pode cadastrar uma categoria de produto!'
     user_policy:
-      index?: 'Você não está autorizado a lista usuários!'
+      index?: 'Você não está autorizado à listar usuários!'

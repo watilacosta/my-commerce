@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateOrderItems
   include Interactor
 
@@ -8,7 +10,7 @@ class CreateOrderItems
   private
 
   def create_order_items
-    context.fail!(error: 'Items are required')  unless context.items.present?
+    context.fail!(error: 'Items are required')  if context.items.blank?
 
     context.items.each do |item|
       unit_price = item[:unit_price]

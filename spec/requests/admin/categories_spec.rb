@@ -26,7 +26,7 @@ RSpec.describe 'Admin::Categories', type: :request do
       end
 
       it 'returns correct category description' do
-        expect(json_attributes(response)['description']).to eq(description)
+        expect(json_attributes(response)["data"]["attributes"]["description"]).to eq(description)
       end
     end
 

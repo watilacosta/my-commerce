@@ -5,8 +5,8 @@ class UserPolicy < ApplicationPolicy
     user.admin? && user.active?
   end
 
-  def edit?
-    true
+  def update?
+    index?
   end
 
   class Scope < Scope

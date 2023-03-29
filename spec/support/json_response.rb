@@ -1,6 +1,6 @@
 module JsonResponse
   def json_attributes(response)
-    JSON.parse(response.body)['data']['attributes']
+    JSON.parse(response.body)
   end
 
   def json_collection(response)
