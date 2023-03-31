@@ -20,7 +20,7 @@ module Admin
     private
 
     def user_params
-      params.permit(:firstname, :lastname, :email, :profile, :active)
+      params.require(:user).permit(:id, :firstname, :lastname, :email, :profile, :active)
     end
   end
 end

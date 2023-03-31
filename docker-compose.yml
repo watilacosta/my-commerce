@@ -16,7 +16,7 @@ services:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
-  my-commerce:
+  web:
     networks:
       my-commerce:
     build: .
