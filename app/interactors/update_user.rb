@@ -5,7 +5,9 @@ class UpdateUser
 
   def call
     context.user = User.find(context.id)
-    user_params = context.user_params.to_hash
+    user_params = context.user_params
+                         .to_hash
+                         .symbolize_keys!
 
     context.user.update!(user_params)
   end
