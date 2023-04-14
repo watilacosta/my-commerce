@@ -3,7 +3,7 @@
 module Admin
   class UsersController < AdminController
     def index
-      users = authorize User.order(id: :asc)
+      users = authorize User.order(:created_at)
 
       render json: users, status: :ok
     end
