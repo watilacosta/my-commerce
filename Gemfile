@@ -9,6 +9,7 @@ gem 'interactor', '~> 3.0'
 gem 'interactor-rails', '~> 2.0'
 gem 'jsonapi-serializer'
 gem 'jwt'
+gem "paranoia"
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'pundit'
