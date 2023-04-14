@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :restrict_with_exception
 
   has_secure_password
+  acts_as_paranoid
 
   validates :email, presence: true, length: { in: 6..100 }, uniqueness: true
   validates :password_digest, presence: true, length: { in: 8..100 }
