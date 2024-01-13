@@ -3,15 +3,10 @@
 module StoreFront
   class OrdersController < BaseController
     def create
-      user_id = permitted_params[:user_id]
-      items =  permitted_params[:items]
-      result = Organizers::CheckoutFlow.call(user_id:, items:)
+      result = Organizers::CheckoutFlow.call(permitted_params[:user_id], permitted_params[:items])
 
-      render json: if result.success?
-                     { order: result.order } # TODO: serializer order
-                   else
-                     { error: result.error }
-                   end
+      # TODO: serializer order
+      render json: result.success? ? { order: result.order } : { error: result.error }
     rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotFound => e
       render json: { error: e.message }
     end
