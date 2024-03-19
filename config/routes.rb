@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   post 'auth/sign_up'
   post 'auth/confirm_user_access'
 
-  resources :flashcards, only: %i[create]
-
   namespace :admin do
     resources :products, only: %i[index]
     resources :brands, only: %i[index]
