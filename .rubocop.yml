@@ -15,7 +15,7 @@ AllCops:
     - 'config/application.rb'
 
 Layout/LineLength:
-  Max: 100
+  Max: 120
 
 Metrics/CyclomaticComplexity:
   Max: 5

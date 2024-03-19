@@ -4,6 +4,9 @@ class Product < ApplicationRecord
   belongs_to :brand
   belongs_to :category
 
+  accepts_nested_attributes_for :brand
+  accepts_nested_attributes_for :category
+
   validates :title, presence: true, length: { in: 2..100 }
   validates :description, presence: true, length: { in: 5..2_000 }
   validates :price, presence: true, numericality: { other_than: 0 }
